@@ -5,11 +5,12 @@
 
 void main(int argc, char* argv[])
 {
+	srand(time(NULL));
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	setlocale(LC_ALL, "");
-	//Base();
-	Midle();
+	Base();
+	//Midle();
 	//Hard();
 }
 
