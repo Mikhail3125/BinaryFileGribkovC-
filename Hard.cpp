@@ -37,10 +37,10 @@ Book* FillStruct(Сustomer* mas_book, int count)  //Всего лишь запо
 } 
 void ShowBooks(Сustomer* mas_Сustomer, int count)
 {
-	cout << "\nИнформация о всех книах: \n";
+	cout << "\nИнформация о всех Сustomers: \n";
 	for (size_t i = 0; i < count; i++)
 	{
-		printf("\nИнформация о %d книге: \n\t", i + 1);
+		printf("\nИнформация о %d Сustomer: \n\t", i + 1);
 		cout << mas_Сustomer[i].fio << " " ;
 		cout << mas_Сustomer[i].date << " ";
 		cout << mas_Сustomer[i].total_coast << " " ;
@@ -88,7 +88,6 @@ void hard_task()
 	mas_book = LoadFile( count);
 	cout << "\nСодержимое файла до внесенных изминений: \n";
 	cout << "\nВ файле хранится масив структур содержащих следущие поля: \n";
-	cout << "\t-ФИО автора\n\t-название книги\n\t-цена за ед.\n\t-количетсво экзэмпляров";
 	ShowBooks(mas_Сustomer, count);
 	cout << "\nСодержимое файла после внесенных изминений: ";
 	 IsSetDiscount(count);
