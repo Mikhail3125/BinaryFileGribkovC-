@@ -82,7 +82,7 @@ void hard_task()
 {
 	cout << "\nHard task level: \n";
 	int count = 10;
-	Сustomer* mas_book = new Сustomer[count];
+	Сustomer* mas_customer = new Сustomer[count];
 	mas_Сustomer = FillStruct(mas_Сustomer, count);
 	SaveFile(mas_Сustomer, count);
 	mas_book = LoadFile( count);
