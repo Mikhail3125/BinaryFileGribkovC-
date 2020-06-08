@@ -25,7 +25,7 @@ void CheckDigit(int& anydigit);
 Book* FillStruct(Сustomer* mas_book, int count)  //Всего лишь заполняет масив структур
 {
 	if (mas_book == nullptr)
-		mas_book = new Book[count];
+		mas_Сustomer = new Сustomer[count];
 	for (size_t i = 0; i < count; i++)
 	{
 		mas_Сustomer[i].fio  = "FIO" + to_string(i+1);
@@ -35,7 +35,7 @@ Book* FillStruct(Сustomer* mas_book, int count)  //Всего лишь запо
 	}
 	return mas_Сustomer;
 } 
-void ShowBooks(Сustomer* mas_books, int count)
+void ShowBooks(Сustomer* mas_Сustomer, int count)
 {
 	cout << "\nИнформация о всех книах: \n";
 	for (size_t i = 0; i < count; i++)
@@ -50,7 +50,7 @@ void ShowBooks(Сustomer* mas_books, int count)
 Book* LoadFile( int count)  //Прочитать данные с файла
 {
 	ifstream f_in; f_in.open("database.bin", ios::binary | ios::in);
-	Сustomer* buffer = new Book[count];
+	Сustomer* buffer = new Сustomer[count];
 	f_in.read((char*)buffer, count * sizeof(Сustomer));
 	f_in.close();
 	return buffer;
@@ -58,14 +58,14 @@ Book* LoadFile( int count)  //Прочитать данные с файла
 void SaveFile(Сustomer* mas_book, int count)
 {
 	ofstream f_out; f_out.open("database.bin", ios::binary | ios::out);
-	int BufferSize = count * sizeof(Book);
-	f_out.write((char*)mas_book, BufferSize);
+	int BufferSize = count * sizeof(Сustomer);
+	f_out.write((char*)mas_Сustomer, BufferSize);
 	f_out.close();
 }
 int IsSetDiscount(int count) //Установление скидки если соблюдается условие 
 {
 	ifstream f_in; f_in.open("database.bin", ios::binary | ios::in );
-	Сustomer* buffer = new Book[count];
+	Сustomer* buffer = new Сustomer[count];
 	f_in.read((char*)buffer, count * sizeof(Сustomer));
 	f_in.close();
 	for (size_t i = 0; i < count; i++)
